@@ -34,7 +34,7 @@ class App(object):
             "DIRECTION":1,
             "MOVABLE":1,
             "NUMBER SIZE AFTER FLOATING POINT":1,
-            "UPDATE":700
+            "UPDATE":500
         }
     }
 
@@ -49,8 +49,8 @@ class App(object):
     w_geometry = (400,280)
     w_title = "Performance Monitor"
 
-    __number_size_after_floating_point = 2
-    __update = 1000
+    __number_size_after_floating_point = None
+    __update = None
 
 
     def run(self):
