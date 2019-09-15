@@ -160,27 +160,27 @@ class App(object):
             direction = [0,1]
 
         # Cria um checkbutton para a direção do texto ser vertical.
-        self.__verticalCB = Checkbutton(self.__textPositionFrame,bg=self.w_color,text="VERTICAL",command=lambda:changeDirection(0))
+        self.__verticalCB = Checkbutton(self.__textPositionFrame,bg=self.w_color,text="Vertical",command=lambda:changeDirection(0))
         self.__verticalCB.var = IntVar()
         self.__verticalCB.var.set(direction[0])
         self.__verticalCB.config(variable=self.__verticalCB.var)
         self.__verticalCB.pack(side="left")
 
         # Cria um checkbutton para a direção do texto ser horizontal.
-        self.__horizontalCB = Checkbutton(self.__textPositionFrame,bg=self.w_color,text="HORIZONTAL",command=lambda:changeDirection(1))
+        self.__horizontalCB = Checkbutton(self.__textPositionFrame,bg=self.w_color,text="Horizontal",command=lambda:changeDirection(1))
         self.__horizontalCB.var = IntVar()
         self.__horizontalCB.var.set(direction[1])
         self.__horizontalCB.config(variable=self.__horizontalCB.var)
         self.__horizontalCB.pack(side="left")
 
         # Cria um checkbutton para habilitar ou não a opção de mover o texto ao clicar nele.
-        self.__movableCB = Checkbutton(self.__textPositionFrame,bg=self.w_color,text="MOVABLE")
+        self.__movableCB = Checkbutton(self.__textPositionFrame,bg=self.w_color,text="Movable")
         self.__movableCB.var = IntVar()
         self.__movableCB.var.set(int(settings["System"]["MOVABLE"]))
         self.__movableCB.config(variable=self.__movableCB.var)
         self.__movableCB.pack(side="left")
 
-        Label(self.__textPositionFrame,bg=self.w_color,width=3).pack(side="left")
+        Label(self.__textPositionFrame,bg=self.w_color,width=9).pack(side="left")
 
 
         # Cria frame para inserir os widgets relacionados à configuração do que o usuário deseja ou não ver.
