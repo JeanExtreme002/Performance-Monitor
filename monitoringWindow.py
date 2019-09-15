@@ -280,7 +280,7 @@ class MonitoringWindow(object):
                 # Obtém o ping.
                 if self.__ping:
                     c_ping = util.getLatency()
-                    if not ping: ping = "Undefined"
+                    if not c_ping: c_ping = "Undefined"
 
                 # Obtém o consumo de CPU.
                 if self.__cpu:
