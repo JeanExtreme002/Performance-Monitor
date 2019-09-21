@@ -6,5 +6,4 @@ Windows only <br />
 Python 3.x <br />
 Psutil <br />
 Infi.systray <br />
-PIL <br />
 
