@@ -22,6 +22,7 @@ class MonitoringWindow(object):
         self.__root.resizable(False,False)
         self.__root.overrideredirect(True)
         self.__root["bg"] = chromaKeyColor
+        self.__destroy = False
 
         # Define o tamanho da janela como sendo o tamanho do monitor do usuário.
         self.__width = self.__root.winfo_screenwidth()
@@ -141,7 +142,7 @@ class MonitoringWindow(object):
         """
 
         self.stop()
-        self.__root.destroy()
+        self.__destroy = True
 
 
     def drawOutline(self):
@@ -380,6 +381,10 @@ class MonitoringWindow(object):
                     self.__update()
                 time.sleep(0.01)
 
+        # Destrói a GUI caso o método close() seja chamado.
+        if self.__destroy:
+            self.__root.destroy()
+
 
     def stop(self):
         """
@@ -388,7 +393,6 @@ class MonitoringWindow(object):
         informação do método run(), mas ele não destrói a GUI.
         """
         self.__stop = True
-        time.sleep(1)
 
 
     def __update(self):

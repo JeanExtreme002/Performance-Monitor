@@ -357,20 +357,22 @@ class App(object):
             movable=self.__movableCB.var.get()
             )
         
-        # O ícone de bandeja e a GUI do tkinter devem ser executadas no main thread. 
-        # Por isso não é possível executá-las ao mesmo tempo em Threads sem que haja alguns problemas.
-        # Um desses problemas, é que o método stop() não funcionará já que o método run() o bloqueia. 
-        # Para resolver isto, a função para fechar o ícone de bandeja junto com o programa será os._exit.
 
+        def close(systray):
+            """
+            Função para fechar o programa
+            """
+            monitor.close()
+
+        # Cria um ícone de bandeja.
         trayIcon = TrayIcon(
             self.w_title,
-            self.w_title,
-            ("Close",lambda:os._exit(0))
-            ,icon=self.icon_fn
+            on_quit=close,
+            icon=self.icon_fn
             )
         
         # Inicializa o ícone de bandeja.
-        Thread(target=trayIcon.run).start()
+        trayIcon.run()
 
         # Inicia o monitoramento.
         monitor.run(self.__update,self.__number_size_after_floating_point)
