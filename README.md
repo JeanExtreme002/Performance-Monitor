@@ -5,6 +5,6 @@ With this program you can analyze the performance of your computer while surfing
 Windows only <br />
 Python 3.x <br />
 Psutil <br />
-Pystray <br />
+Infi.systray <br />
 PIL <br />
 
