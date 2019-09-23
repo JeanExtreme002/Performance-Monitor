@@ -1,7 +1,7 @@
 from tkinter import Canvas,Label,Tk
 import psutil
+import src.util
 import time
-import util
 
 class MonitoringWindow(object):
 
@@ -280,7 +280,7 @@ class MonitoringWindow(object):
 
                 # Obtém o ping.
                 if self.__ping:
-                    c_ping = util.getLatency()
+                    c_ping = src.util.getLatency()
                     if not c_ping: c_ping = "Undefined"
 
                 # Obtém o consumo de CPU.
@@ -342,7 +342,7 @@ class MonitoringWindow(object):
                         if memory_used == memory.used and memory_total == memory.total:
                             continue
 
-                        text = "MEMORY: %i %s / %i %s"%(*util.getFormattedSize(memory.used),*util.getFormattedSize(memory.total))
+                        text = "MEMORY: %i %s / %i %s"%(*src.util.getFormattedSize(memory.used),*src.util.getFormattedSize(memory.total))
                         memory_used = memory.used
                         memory_total = memory.total
 
